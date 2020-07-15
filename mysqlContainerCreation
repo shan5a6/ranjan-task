@@ -1,0 +1,17 @@
+docker create volume mydbvol1
+docker run --name mydb -d -e MYSQL_ROOT_PASSWORD=password -v mydbvol1:/var/lib/mysql --restart always -p 3306:3306 mysql --default-authentication-plugin=mysql_native_password
+
+[root@ip-172-31-73-204 ~]# docker exec -it mydb bash
+root@1f7c2eae58a9:/# mysql -u root -ppassword
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+
+mysql> GRANT ALL PRIVILEGES ON * . * TO 'root'@'%';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> create database employeedb;
+Query OK, 1 row affected (0.00 sec)
