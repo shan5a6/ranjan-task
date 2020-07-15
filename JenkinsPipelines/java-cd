@@ -1,0 +1,21 @@
+pipeline {
+  agent any
+  stages {
+    stage('Checking the application status') {
+      steps {
+        script {
+          def container_status = sh(script: "docker ps -a|grep -i springboot", returnStatus: true) == 0
+          if ("${container_status}" ==  "true")
+          {
+            sh 'docker rm -f springboot'
+          }
+        }
+      }
+    }
+    stage('Starting the application') {
+      steps {
+        sh "docker run -d --name springboot -p 8000:8080 springboot"
+      }
+    }
+  }
+}
