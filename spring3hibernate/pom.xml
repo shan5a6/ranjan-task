@@ -24,7 +24,7 @@
           <name>libs-snapshot-local</name>
           <url>http://192.168.0.37:8081/artifactory/ext-snapshot-local</url>
         </snapshotRepository>
-	
+
  </distributionManagement>
 	<reporting>
 		<plugins>
@@ -33,7 +33,7 @@
 				<artifactId>findbugs-maven-plugin</artifactId>
 				<version>3.0.5</version>
 				<configuration>
-					<!-- Enables analysis which takes more memory but finds more bugs. If 
+					<!-- Enables analysis which takes more memory but finds more bugs. If
 						you run out of memory, changes the value of the effort element to 'low'. -->
 					<effort>Max</effort>
 					<!-- Reports all bugs (other values are medium and max) -->
@@ -46,7 +46,7 @@
 	</reporting>
 
 	<build>
-		<!-- <sourceDirectory>src</sourceDirectory> <resources> <resource> <directory>src</directory> 
+		<!-- <sourceDirectory>src</sourceDirectory> <resources> <resource> <directory>src</directory>
 			<excludes> <exclude>**/*.java</exclude> </excludes> </resource> </resources> -->
 		<plugins>
       <plugin>
@@ -64,7 +64,7 @@
 				<artifactId>findbugs-maven-plugin</artifactId>
 				<version>3.0.5</version>
 				<configuration>
-					<!-- Enables analysis which takes more memory but finds more bugs. If 
+					<!-- Enables analysis which takes more memory but finds more bugs. If
 						you run out of memory, changes the value of the effort element to 'Low'. -->
 					<effort>Max</effort>
 					<!-- Build doesn't fail if problems are found -->
@@ -304,10 +304,10 @@
 			<version>1.5.6</version>
 		</dependency>
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.0.5</version>
-		</dependency>
+	     <groupId>mysql</groupId>
+	     <artifactId>mysql-connector-java</artifactId>
+	     <version>8.0.15</version>
+	 </dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
