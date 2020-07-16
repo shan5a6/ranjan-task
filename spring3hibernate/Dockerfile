@@ -4,7 +4,7 @@ WORKDIR /usr/src/mymaven/
 RUN mvn clean package
 
 #FROM tomcat:7-jre7-alpine
-FROM tomcat:8.0
+FROM tomcat:8-jdk8
 RUN rm -rf /usr/local/tomcat/webapps/*
 COPY --from=builder /usr/src/mymaven/target/Spring3HibernateApp.war /usr/local/tomcat/webapps/ROOT.war
 WORKDIR /usr/local/tomcat/webapps/
